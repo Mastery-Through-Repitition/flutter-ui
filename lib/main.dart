@@ -58,6 +58,11 @@ class _RandomWordsState extends State<RandomWords> {
       title: Text(pair.asPascalCase, style: _biggerFont),
       trailing: Icon(_alreadySaved ? Icons.favorite : Icons.favorite_border,
           color: _alreadySaved ? Colors.red : null),
+      onTap: () {
+        setState(() {
+          _alreadySaved ? _saved.remove(pair) : _saved.add(pair);
+        });
+      },
     );
   }
 }
